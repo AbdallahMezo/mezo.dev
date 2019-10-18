@@ -84,7 +84,13 @@ h2 {
     font-size: 14px;
     width: 90vw;
   }
-  .header {
-    text-align: left;
+  .footer p {
+    float: none;
+    text-align: center;
+    margin: 0.5rem;
+  }
+
+  .links {
+    float: none;
   }
 }
