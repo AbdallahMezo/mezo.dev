@@ -1,3 +1,13 @@
+:root {
+  --primary-color: #65c9ff;
+  --font-color: #07102f;
+  --bg-color: #fff;
+}
+[data-theme="dark"] {
+  --primary-color: #b3d4e6;
+  --font-color: #e9eeff;
+  --bg-color: #07102f;
+}
 * {
   font-family: "Lato", sans-serif;
 }
@@ -6,6 +16,8 @@ body {
   width: 800px;
   margin: 0 auto;
   font-size: 16px;
+  background-color: var(--bg-color);
+  color: var(--font-color);
 }
 
 p {
@@ -19,21 +31,110 @@ p {
   margin: 1rem auto;
 }
 
-/* Header */
-.header {
-  text-align: center;
-}
 b {
   position: relative;
 }
 b::after {
   content: "";
-  border-bottom: 0.3rem solid #65c9ff;
+  border-bottom: 0.3rem solid var(--primary-color);
   width: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
   opacity: 0.2;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  color: var(--font-color);
+}
+a:visited {
+  color: var(--font-color);
+}
+a:hover {
+  color: var(--primary-color);
+}
+a:after {
+  content: "";
+  border-bottom: 0.3rem solid var(--primary-color);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  opacity: 0.2;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  position: relative;
+}
+
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 2.125rem;
+  position: relative;
+  width: 3.75rem;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "☀️";
+  height: 1.625rem;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 1.625rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+input:checked + .slider {
+  background-color: midnightblue;
+}
+
+input:checked + .slider:before {
+  content: "🌙";
+  background-color: var(--bg-color);
+  transform: translateX(1.625rem);
+}
+
+.slider.round {
+  border-radius: 2.125rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 /* About */
@@ -55,30 +156,6 @@ b::after {
 .links li {
   margin: 0 0.3rem;
 }
-a {
-  text-decoration: none;
-  position: relative;
-}
-a:visited {
-  color: #000;
-}
-a:hover {
-  color: #65c9ff;
-}
-a:after {
-  content: "";
-  border-bottom: 0.3rem solid #65c9ff;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  opacity: 0.2;
-}
-h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
 @media screen and (max-width: 768px) {
   body {
     font-size: 14px;

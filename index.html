@@ -24,6 +24,12 @@
         <b>Perfect software within timeframes</b>.
       </p>
       <p>I do programs in <b>JavaScript</b></p>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
+      </div>
       <span class="divider"></span>
     </header>
     <section class="about">
@@ -42,7 +48,7 @@
       </p>
       <p>
         I started my career <b>3 years</b> ago as remote <b>Frontend Intern</b> in
-        <a href="https://impargo.de">IMPARGO.de</a>, and in the moment I am working as a
+        <a href="https://impargo.de">IMPARGO.de</a>, and at the moment I am working as a
         <b>Senior Frontend Engineer</b> for
         <a href="https://wakecap.com">WakeCap</a>
       </p>
@@ -51,12 +57,12 @@
         deliver before deadline guy
       </p>
       <p>
-        Most of my experience was in <b>IoT</b> large scale applications, so I am good at creating
+        Most of my experience is in <b>IoT</b> large scale applications, so I am good at creating
         <b>large-scale</b>, <b>data-driven</b> and <b>real-time</b> applications
       </p>
       <p>
-        So as a most of time working with browsers, I had invistagted a lot of time to learn more
-        about <b>accessability</b>, <b>PWAs</b> and <b>responsive websites</b>
+        So as a most of the time working with browsers, I am invistigating a lot of time to learn
+        more about <b>accessability</b>, <b>PWAs</b> and <b>responsive websites</b>
       </p>
       <p>
         With a little hands on experience in backend using <b>Nodejs</b> and <b>Mongo</b>, with a
@@ -90,5 +96,28 @@
         <li><a href="mailto: abdalla.mezo@gmail.com">Mail</a></li>
       </ul>
     </footer>
+
+    <script>
+      const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+      const currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
+      if (currentTheme) {
+        document.documentElement.setAttribute("data-theme", currentTheme);
+
+        if (currentTheme === "dark") {
+          toggleSwitch.checked = true;
+        }
+      }
+      function switchTheme(e) {
+        if (e.target.checked) {
+          document.documentElement.setAttribute("data-theme", "dark");
+          localStorage.setItem("theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
+          localStorage.setItem("theme", "light");
+        }
+      }
+
+      toggleSwitch.addEventListener("change", switchTheme, false);
+    </script>
   </body>
 </html>

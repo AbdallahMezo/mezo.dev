@@ -1,0 +1,16 @@
+{
+  "name": "mezo.dev",
+  "version": "0.0.1",
+  "description": "Personal website and resume",
+  "main": "app/index.html",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Abdallah Ebrahim",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.0",
+    "gulp-connect": "^5.7.0"
+  }
+}
