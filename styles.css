@@ -141,6 +141,9 @@ input:checked + .slider:before {
 /* About */
 
 /* Footer */
+.footer {
+  margin-bottom: 24px;
+}
 .footer p {
   float: left;
   margin: 0;
